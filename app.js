@@ -1,19 +1,50 @@
-const url = 'https://api.jikan.moe/v3/top/anime'
+const url = 'https://api.jikan.moe/v3/top/anime';
+const main = document.createElement('div');
+document.body.appendChild(main);
+main.className = 'main'
 
 fetch(url)
   .then(response => response.json())
+  .then(animes => animes.top)
+  .then(theGoodLog)
   .then(grabInfo)
 
-function grabInfo(animes) {
-  animes.top.forEach(anime => {
-    h1 = document.createElement('h1');
-    img = document.createElement('img');
-    p = document.createElement('p');
+function theGoodLog(oofta) {
+  console.log(oofta)
+  return oofta
+}
 
-    h1.textContent = anime.title
-    img.src = anime.image_url
-    p.textContent = anime.score
-
-    document.body.append(h1, img, p)
+function grabInfo(topAnimes) {
+  topAnimes.map(anime => {
+    bootstrapCard(anime)
   });
+}
+
+function bootstrapCard(anime) {
+  divMain = document.createElement('div');
+  img = document.createElement('img');
+
+  divMain.className = 'card'
+  divMain.style.width = '18rem'
+  img.className = 'card-img-top img-resize'
+
+  divBody = document.createElement('div');
+  h5 = document.createElement('h5');
+  p = document.createElement('p');
+  a = document.createElement('a');
+
+  divBody.className = 'card-body'
+  a.className = 'btn btn-primary'
+  h5.className = 'card-title'
+  p.className = 'card-text'
+
+  img.src = anime.image_url
+  h5.textContent = anime.title
+  p.textContent = anime.score
+  a.innerText = 'Myanimelist'
+  a.href = anime.url
+
+  divBody.append(h5, p, a)
+  divMain.append(img, divBody)
+  main.appendChild(divMain)
 }
