@@ -1,0 +1,12 @@
+.img-resize {
+  width: 10rem;
+}
+
+.custom-bg {
+  background: #2b2d42;
+  color: #777a9d;
+}
+
+.main {
+  display: flex;
+}
