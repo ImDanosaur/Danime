@@ -1,13 +1,31 @@
 .img-resize {
-  width: 10rem;
+  width: 12rem;
+}
+
+.nav-img {
+  width: 3rem;
 }
 
 .custom-bg {
   background: #2b2d42;
-  color: #777a9d;
+  color: #e6e6e9;
 }
 
 .main {
   display: flex;
   flex-flow: row wrap;
+  align-content: center;
+  background: #edf1f5;
+}
+
+.card-style {
+  background: #fafcfc;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.btn-custom {
+  position: absolute;
+  bottom: 1rem;
 }
