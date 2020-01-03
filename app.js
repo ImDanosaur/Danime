@@ -24,8 +24,8 @@ function bootstrapCard(anime) {
   divMain = document.createElement('div');
   img = document.createElement('img');
 
-  divMain.className = 'card'
-  divMain.style.width = '18rem'
+  divMain.className = 'card card-style'
+  divMain.style.width = '14rem'
   img.className = 'card-img-top img-resize'
 
   divBody = document.createElement('div');
@@ -34,13 +34,13 @@ function bootstrapCard(anime) {
   a = document.createElement('a');
 
   divBody.className = 'card-body'
-  a.className = 'btn btn-primary'
+  a.className = 'btn btn-primary btn-custom'
   h5.className = 'card-title'
   p.className = 'card-text'
 
   img.src = anime.image_url
   h5.textContent = anime.title
-  p.textContent = anime.score
+  p.textContent = `Rating: ${anime.score}`
   a.innerText = 'Myanimelist'
   a.href = anime.url
 
